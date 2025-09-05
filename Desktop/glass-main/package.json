@@ -18,6 +18,8 @@
         "build:web": "cd pickleglass_web && npm install && npm run build && cd ..",
         "build:all": "npm run build:renderer && npm run build:web",
         "watch:renderer": "node build.js --watch",
+        "web:dev": "cd pickleglass_web && npm run dev",
+        "dev": "npm run build:web && concurrently \"npm run watch:renderer\" \"npm run web:dev\" && electron .",
         "test": "jest"
     },
     "keywords": [
@@ -66,7 +68,8 @@
         "electron-reloader": "^1.2.3",
         "esbuild": "^0.25.5",
         "jest": "^29.7.0",
-        "prettier": "^3.6.2"
+        "prettier": "^3.6.2",
+        "concurrently": "^8.2.2"
     },
     "optionalDependencies": {
         "electron-liquid-glass": "^1.0.1"
