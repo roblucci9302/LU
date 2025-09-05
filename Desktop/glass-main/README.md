@@ -51,6 +51,14 @@ node --version
 npm run setup
 ```
 
+### Launch in Development
+
+```bash
+npm run dev
+```
+
+This builds the web client, starts the renderer and web servers, and launches the Electron app.
+
 ## Highlights
 
 

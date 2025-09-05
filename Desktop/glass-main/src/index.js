@@ -684,10 +684,11 @@ async function startWebStack() {
     console.error(`============================================================`);
     console.error(`[ERROR] Frontend build directory not found!`);
     console.error(`Path: ${staticDir}`);
-    console.error(`Please run 'npm run build' inside the 'pickleglass_web' directory first.`);
+    console.error(`Run 'npm run dev' to build and start the application.`);
     console.error(`============================================================`);
-    app.quit();
-    return;
+    throw new Error(
+      `Frontend build directory not found. Run 'npm run dev' to build and start the application.`
+    );
   }
 
   const runtimeConfig = {
